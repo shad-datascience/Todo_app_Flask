@@ -32,9 +32,6 @@ def index():
     # return render_template("index.html");
     #return "Index!"
 
-@app.route("/hello")
-def hello():
-    return "Hello World!"
 
 @app.route('/update<int:sno>',methods=['GET','POST'])
 def update(sno):
@@ -57,9 +54,6 @@ def delete(sno):
     db.session.commit()
     return redirect ('/')
 
-@app.route("/members")
-def members():
-    return "Members"
 
 if __name__ == "__main__":
     app.run(debug=True)

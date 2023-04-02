@@ -32,6 +32,9 @@ def index():
     # return render_template("index.html");
     #return "Index!"
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/update<int:sno>',methods=['GET','POST'])
 def update(sno):
@@ -56,4 +59,4 @@ def delete(sno):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')

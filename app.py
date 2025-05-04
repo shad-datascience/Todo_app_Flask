@@ -15,6 +15,9 @@ class todo(db.Model):
     Explanation=db.Column(db.String(1000),nullable=False)
     date_created=db.Column(db.DateTime,default=datetime.utcnow)
 
+with app.app_context():
+    db.create_all()
+
     def __repr__(self) -> str:
         return f"{self.Sno} -{self.Task}"
 
